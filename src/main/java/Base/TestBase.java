@@ -54,14 +54,14 @@ public class TestBase {
 	{
 		//String browserName = prop.getProperty("browser");used to load from properties file
 		
-		//DesiredCapabilities dc= DesiredCapabilities.chrome();
+		DesiredCapabilities dc= DesiredCapabilities.chrome();
 		//RemoteWebDriver driver;
-		//driver = new RemoteWebDriver (new URL("http://192.168.4.48:4444/wd/hub"),dc);
+		driver = new RemoteWebDriver (new URL("http://192.168.4.48:4444/wd/hub"),dc);
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		//driver.get("https://plqa.uat.solartis.net/plweb/");
 		
-		System.setProperty("webdriver.chrome.driver","D:\\EclipseWorkspace\\POM-Cucumber\\src\\main\\resources\\chromedriver.exe");
-	  	driver = new ChromeDriver();
+		//System.setProperty("webdriver.chrome.driver","D:\\EclipseWorkspace\\POM-Cucumber\\src\\main\\resources\\chromedriver.exe");
+	  	//driver = new ChromeDriver();
 	  	driver.manage().window().maximize();
 	  	driver.manage().deleteAllCookies();
 	  	driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
