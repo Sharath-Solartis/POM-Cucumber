@@ -19,8 +19,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TestBase {
 	
-	//public static RemoteWebDriver driver;
-	public static WebDriver driver;
+	public static RemoteWebDriver driver;
+	//public static WebDriver driver;
 	public static Properties prop;
 	protected static EventListener event;
 	
@@ -52,7 +52,7 @@ public class TestBase {
 	
 	public static void initialization() throws MalformedURLException
 	{
-		//String browserName = prop.getProperty("browser");used to load from properties file
+		//String browserName = prop.getProperty("browser");//used to load from properties file
 		
 		DesiredCapabilities dc= DesiredCapabilities.chrome();
 		//RemoteWebDriver driver;
@@ -60,7 +60,7 @@ public class TestBase {
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		//driver.get("https://plqa.uat.solartis.net/plweb/");
 		
-		//System.setProperty("webdriver.chrome.driver","D:\\EclipseWorkspace\\POM-Cucumber\\src\\main\\resources\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver",chromedriverpath);
 	  	//driver = new ChromeDriver();
 	  	driver.manage().window().maximize();
 	  	driver.manage().deleteAllCookies();
