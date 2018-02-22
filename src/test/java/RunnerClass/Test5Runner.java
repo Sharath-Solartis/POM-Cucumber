@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         glue = "StepDefinitions",
         features = {"src/main/java/FeatureFiles/BaseRateCheck.Feature"},
         monochrome=true,
-        tags = {"@First"},
+        tags = {"@Fifth"},
         strict=true,
         dryRun=false 
 )
