@@ -10,9 +10,9 @@ public class LoginSD extends TestBase {
 	
 	
 
-	@Given("^user opens browser$")
-	public void user_opens_browser() throws Throwable {
-		TestBase.initialization();
+	@Given("^user opens browser \"([^\"]*)\"$")
+	public void user_opens_browser(String arg1) throws Throwable {
+		TestBase.initialization(arg1);
 
 	}
 

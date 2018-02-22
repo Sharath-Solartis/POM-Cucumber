@@ -8,6 +8,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -23,7 +24,6 @@ public class TestBase {
 	//public static WebDriver driver;
 	public static Properties prop;
 	protected static EventListener event;
-	
 	public static final String chromedriverpath;
     public static final String firefoxdriverpath;
     public static final String iedriverpath;
@@ -50,23 +50,40 @@ public class TestBase {
 		}
 	}
 	
-	public static void initialization() throws MalformedURLException
+	public static void initialization(String browser) throws MalformedURLException
 	{
 		//String browserName = prop.getProperty("browser");//used to load from properties file
 		
-		DesiredCapabilities dc= DesiredCapabilities.chrome();
+		    //DesiredCapabilities dc= DesiredCapabilities.chrome();
 		//RemoteWebDriver driver;
-		driver = new RemoteWebDriver (new URL("http://192.168.4.48:4444/wd/hub"),dc);
+		    //driver = new RemoteWebDriver (new URL("http://192.168.4.48:4444/wd/hub"),dc);
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		//driver.get("https://plqa.uat.solartis.net/plweb/");
 		
 		//System.setProperty("webdriver.chrome.driver",chromedriverpath);
 	  	//driver = new ChromeDriver();
+		if(browser.equalsIgnoreCase("firefox"))
+		{
+			 DesiredCapabilities dc = DesiredCapabilities.firefox();
+			 driver = new RemoteWebDriver (new URL("http://192.168.4.48:4444/wd/hub"),dc);
+		}
+		
+		else if(browser.equalsIgnoreCase("chrome"))
+		{
+			 DesiredCapabilities dc = DesiredCapabilities.chrome();
+			 driver = new RemoteWebDriver (new URL("http://192.168.4.48:4444/wd/hub"),dc);
+		}
+
 	  	driver.manage().window().maximize();
 	  	driver.manage().deleteAllCookies();
-	  	driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+	    driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 	  	driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT,  TimeUnit.SECONDS);
 	  	driver.get(prop.getProperty("url"));
+	}
+	
+	public void deinitialization() 
+	{
+		driver.quit();
 	}
 	
 	public void ClickElement(WebElement element) 
