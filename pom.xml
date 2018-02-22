@@ -115,9 +115,10 @@
 	            </dependencies>
 				<configuration>
                     <parallel>classes</parallel>
-                    <forkMode>perthread</forkMode>
-                    <threadCount>2</threadCount>
-                    <argLine>-Xmx1024m -XX:MaxPerSize=256</argLine>
+                    <useUnlimitedThreads>true</useUnlimitedThreads>
+                    <forkCount>5</forkCount>
+        			<reuseForks>true</reuseForks> 
+        			<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
                     <includes>
                     	<include>**/*Runner.java</include>
                     </includes>
