@@ -81,8 +81,9 @@ public class TestBase {
 	  	driver.get(prop.getProperty("url"));
 	}
 	
-	public void deinitialization() 
+	public static void deinitialization() 
 	{
+		driver.close();
 		driver.quit();
 	}
 	

@@ -2,13 +2,18 @@ package StepDefinitions;
 
 import Base.TestBase;
 import Pages.LoginPage;
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import static org.junit.Assert.assertEquals;
 
 public class LoginSD extends TestBase {
 	
-	
+	@After
+	public void close_browser()
+	{
+		TestBase.deinitialization();
+	}
 
 	@Given("^user opens browser \"([^\"]*)\"$")
 	public void user_opens_browser(String arg1) throws Throwable {
