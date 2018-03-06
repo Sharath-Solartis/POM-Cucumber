@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		plugin={"html:target/cucumber-html-report"},
-        glue = "StepDefinitions",
+        glue = "com.solartis.test.StepDefinitions",
         features = {"src/main/java/FeatureFiles/BaseRateCheck.Feature"},
         monochrome=true,
         tags = {"@First"},
