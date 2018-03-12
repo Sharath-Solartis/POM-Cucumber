@@ -6,13 +6,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		plugin={"html:target/cucumber-html-report"},
+        plugin = { "html:target/site/cucumber-pretty","json:target/cucumber1.json" }, 
         glue = "com.solartis.test.StepDefinitions",
-        features = {"src/main/java/FeatureFiles/BaseRateCheck.Feature"},
-        monochrome=true,
-        tags = {"@First"},
-        strict=true,
-        dryRun=false 
+        features = {"src/main/java/FeatureFiles/BaseRateCheck.feature" },
+        monochrome = true, 
+        strict = true,
+        dryRun = false,
+        tags = {"@First"}       
 )
 
 public class Test1Runner
