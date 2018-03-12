@@ -10,11 +10,11 @@ import org.junit.runner.RunWith;
         glue = "StepDefinitions",
         features = {"src/main/java/FeatureFiles/BaseRateCheck.Feature"},
         monochrome=true,
-        tags = {"@Third"},
+        tags = {"@Secound"},
         strict=true,
         dryRun=false 
 )
 
-public class Test3Runner
+public class Test2Runnerr
 {
 }
