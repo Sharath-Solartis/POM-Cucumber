@@ -12,7 +12,7 @@ Feature: AllRisks Application Test
     Then continue to csp page
     Then enter the "<policy_form>" Then create quote for the specified carrier "<carrier_name>"
     Then click on Underwriter Worksheet button
-    Then checks if the base wind rate is "<base_wind_rate>"
+    #Then checks if the base wind rate is "<base_wind_rate>"
    
  Examples:
  |jdbc_driver          |db_url																						|db_username         |db_password					|Query																					| username            | password | agency_code| insured_name    | insured_mailing_address                  | phone_number| protection_class | number_of_stories | number_loss | policy_form | carrier_name                         | base_wind_rate |
@@ -29,7 +29,7 @@ Feature: AllRisks Application Test
     Then continue to csp page
     Then enter the "<policy_form>" Then create quote for the specified carrier "<carrier_name>"
     Then click on Underwriter Worksheet button
-    Then checks if the base wind rate is "<base_wind_rate>"
+    #Then checks if the base wind rate is "<base_wind_rate>"
  Examples:
  | username            | password | agency_code| insured_name    | insured_mailing_address                  | phone_number| protection_class | number_of_stories | number_loss | policy_form | carrier_name                       | base_wind_rate |
  | allrisksunderwriter | welcome1 | 450076     | 68516Cucumber01 | 100 Main St, Seadrift, TX 77983, USA     | 1234567891  | 1				         | 2                 | 0           | DP3         | Everest Indemnity Insurance Company| 0.55           |
@@ -45,7 +45,7 @@ Feature: AllRisks Application Test
     Then continue to csp page
     Then enter the "<policy_form>" Then create quote for the specified carrier "<carrier_name>"
     Then click on Underwriter Worksheet button
-    Then checks if the base wind rate is "<base_wind_rate>"
+    #Then checks if the base wind rate is "<base_wind_rate>"
  Examples:
  | username            | password | agency_code| insured_name    | insured_mailing_address                  | phone_number| protection_class | number_of_stories | number_loss | policy_form | carrier_name                       | base_wind_rate |
  | allrisksunderwriter | welcome1 | 450076     | 68516Cucumber01 | 100 Main St, Seadrift, TX 77983, USA     | 1234567891  | 1				         | 2                 | 0           | DP3         | Everest Indemnity Insurance Company| 0.55           |
