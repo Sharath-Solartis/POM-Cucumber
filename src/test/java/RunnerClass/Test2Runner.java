@@ -6,15 +6,15 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		plugin={"html:target/cucumber-html-report"},
-        glue = "StepDefinitions",
-        features = {"src/main/java/FeatureFiles/BaseRateCheck.Feature"},
+		plugin = { "html:target/site/cucumber-pretty","json:target/cucumber2.json" }, 
+        glue = "com.solartis.test.StepDefinitions",
+        features = {"src/main/java/FeatureFiles/BaseRateCheck.feature" },
         monochrome=true,
         tags = {"@Secound"},
         strict=true,
         dryRun=false 
 )
 
-public class Test2Runnerr
+public class Test2Runner
 {
 }
