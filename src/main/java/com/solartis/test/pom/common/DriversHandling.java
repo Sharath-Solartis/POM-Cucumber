@@ -35,7 +35,7 @@ public class DriversHandling
     	
     	
     	
-		/*//String browserName = prop.getProperty("browser");//used to load from properties file
+		//String browserName = prop.getProperty("browser");//used to load from properties file
 		
 		    //DesiredCapabilities dc= DesiredCapabilities.chrome();
 		//RemoteWebDriver driver;
@@ -55,10 +55,10 @@ public class DriversHandling
 		{
 			 DesiredCapabilities dc = DesiredCapabilities.chrome();
 			 driver = new RemoteWebDriver (new URL("http://192.168.4.48:4444/wd/hub"),dc);
-		}*/
+		}
     	
-    	System.setProperty("webdriver.chrome.driver",chromedriverpath);
-        driver = new ChromeDriver();
+    	//System.setProperty("webdriver.chrome.driver",chromedriverpath);
+        //driver = new ChromeDriver();
 	  	driver.manage().window().maximize();
 	  	driver.manage().deleteAllCookies();
 	    driver.manage().timeouts().pageLoadTimeout(PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
