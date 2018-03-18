@@ -38,7 +38,7 @@ Feature: AllRisks Application Test
 
  @Third
   Scenario Outline: To validate Base Rate
-      Given user opens browser "firfox"
+      Given user opens browser "firefox"
     #Then user setups DB connection "<jdbc_driver>" Then "<db_url>" And "<db_username>" And "<db_password>" And "<Query>"
     Then user enter "<username>" and "<password>" and click on login button for "<S.No>"
     Then click on Homeowner / Dwelling / Condo Quote button for "<S.No>"
