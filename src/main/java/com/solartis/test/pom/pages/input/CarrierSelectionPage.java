@@ -103,7 +103,7 @@ public class CarrierSelectionPage extends PomEventsMethodDefinition
 			click_getRates();
 			Thread.sleep(40000);
 			
-			CSoP.CarrierSelectionOutput(carrier_name,carriers);
+			CSoP.CarrierSelectionOutput(carrier_name,carriers,test_data);
 			
 			System.out.println("carrier size   " + carriers.size());
 			for( int i=0; i<carriers.size(); i++)

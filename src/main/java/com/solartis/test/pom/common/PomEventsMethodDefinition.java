@@ -332,7 +332,7 @@ public class PomEventsMethodDefinition extends DriversHandling implements PomEve
 		    try
 		    {
 	        File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	        String screenPath = screenshotpath.toString()+filename+".png";
+	        String screenPath = screenshotpath.toString()+"Testdata_"+filename+".png";
 	        FileUtils.copyFile(screenshot, new File(screenPath));
 	        driver.quit();
 		    }

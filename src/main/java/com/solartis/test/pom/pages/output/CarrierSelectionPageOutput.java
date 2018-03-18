@@ -17,7 +17,7 @@ public class CarrierSelectionPageOutput extends PomEventsMethodDefinition
 	static int tablerow = 0;
 	
 	
-	public void CarrierSelectionOutput(String carrier_name, List<WebElement> carriers) throws POMPageException
+	public void CarrierSelectionOutput(String carrier_name, List<WebElement> carriers, String test_data) throws POMPageException
 	{
 		try
 		{
@@ -38,11 +38,11 @@ public class CarrierSelectionPageOutput extends PomEventsMethodDefinition
 				
 					String PolicyFee = FireEventobject.getValueByAttributeOutput(driver.findElement(By.xpath("id('CarrierSelectionFormPage:carrierTile4:Object__Plan__DefaultPolicyFee"+ tablerow +"')")));
 					System.out.println("PolicyFee " + PolicyFee);
-					DB.InserValueWithRowNumber("Vicky", "PolicyFee", PolicyFee, 1);
+					DB.InserValueWithRowNumber("Vicky", "PolicyFee", PolicyFee, Integer.parseInt(test_data));
 					
 					String TBP = FireEventobject.getValueByAttributeOutput(driver.findElement(By.xpath(".//*[@id='CarrierSelectionFormPage:carrierTile4:ApplicablePanel"+ tablerow +"']/input")));
 					System.out.println("TbasePremium " + TBP);
-					DB.InserValueWithRowNumber("Vicky", "TbasePremium", TBP, 1);
+					DB.InserValueWithRowNumber("Vicky", "TbasePremium", TBP, Integer.parseInt(test_data));
 				
 				}
 			}
