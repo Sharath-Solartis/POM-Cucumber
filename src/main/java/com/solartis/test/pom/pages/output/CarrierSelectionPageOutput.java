@@ -37,11 +37,11 @@ public class CarrierSelectionPageOutput extends PomEventsMethodDefinition
 					Thread.sleep(2000);
 				
 					String PolicyFee = FireEventobject.getValueByAttributeOutput(driver.findElement(By.xpath("id('CarrierSelectionFormPage:carrierTile4:Object__Plan__DefaultPolicyFee"+ tablerow +"')")));
-					System.out.println("PolicyFee " + PolicyFee);
+					System.out.println("Tesdata + " + test_data + "PolicyFee " + PolicyFee);
 					DB.InserValueWithRowNumber("Vicky", "PolicyFee", PolicyFee, Integer.parseInt(test_data));
 					
 					String TBP = FireEventobject.getValueByAttributeOutput(driver.findElement(By.xpath(".//*[@id='CarrierSelectionFormPage:carrierTile4:ApplicablePanel"+ tablerow +"']/input")));
-					System.out.println("TbasePremium " + TBP);
+					System.out.println("Tesdata + " + test_data + "TbasePremium " + TBP);
 					DB.InserValueWithRowNumber("Vicky", "TbasePremium", TBP, Integer.parseInt(test_data));
 				
 				}
