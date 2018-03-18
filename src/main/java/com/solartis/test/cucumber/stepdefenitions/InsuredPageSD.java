@@ -13,7 +13,7 @@ public class InsuredPageSD {
 	public void enter_the_and_and_in_insured_information(String insured_name, String insured_mailing_address,String phone_number,String test_data) throws Throwable {
 		InsuredPage insuredpage = new InsuredPage();
 		insuredpage.Insured(insured_name, insured_mailing_address, phone_number,test_data);
-		scenariolog.info("Entering Insured Information");
+		scenariolog.info("Entering Insured Information fro " + test_data);
 	}
 
 	/*@Then("^enter the \"([^\"]*)\"$")

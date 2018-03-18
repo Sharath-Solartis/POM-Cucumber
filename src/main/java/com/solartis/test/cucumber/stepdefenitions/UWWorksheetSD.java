@@ -16,6 +16,6 @@ public class UWWorksheetSD
 		System.out.println("UWsheet compare");
 		//assertEquals(base_wind_rate,uwpage.BaseRateCheck());
 		uwpage.UWSheet(base_wind_rate,test_data);
-		scenariolog.info("Reading Underwriter Worksheet Factors");
+		scenariolog.info("Reading Underwriter Worksheet Factors fro " + test_data);
     }
 }

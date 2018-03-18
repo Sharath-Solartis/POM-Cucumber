@@ -12,6 +12,6 @@ public class QuoteSummarySD {
 	public void click_on_Underwriter_Worksheet_button(String test_data) throws Throwable {
 		QuoteSummaryPage qs = new QuoteSummaryPage();
 		qs.QuoteSummary(test_data);
-		scenariolog.info("Quote Summary Page");
+		scenariolog.info("Quote Summary Page fro " + test_data);
 	}
 }

@@ -13,7 +13,7 @@ public class UnderwritingSD {
 	{
 		UnderwritingPage uwpage = new UnderwritingPage();
 		uwpage.uwpage1(test_data);
-		scenariolog.info("Filling Underwriting Information");
+		scenariolog.info("Filling Underwriting Information  fro " + test_data);
 
 	}
 

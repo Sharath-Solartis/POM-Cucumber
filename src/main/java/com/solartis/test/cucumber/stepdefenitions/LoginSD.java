@@ -32,8 +32,7 @@ public class LoginSD
 	{
 		LoginPage loginpage= new LoginPage();
 		loginpage.Login(username, password,test_data);
-		scenariolog.info("Login Action");
-
+		scenariolog.info("Login Action fro " + test_data);
 	}
 	
 	/*@Then("^validate broswer title for \"([^\"]*)\"$")

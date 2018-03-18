@@ -15,6 +15,6 @@ public class CarrierSelectionSD {
 	{
 		CarrierSelectionPage cspage = new CarrierSelectionPage();
 		cspage.CarrierSelection(policy_form, carrier_name,test_data);
-		scenariolog.info("Creating Quote");
+		scenariolog.info("Creating Quote fro " + test_data);
 	}
 }

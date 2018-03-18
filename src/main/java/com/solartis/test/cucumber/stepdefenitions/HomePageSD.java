@@ -24,7 +24,7 @@ public class HomePageSD {
 	public void click_on_Homeowner_Dwelling_Condo_Quote_button(String test_data) throws Throwable {
 		HomePage homepage = new HomePage();
 		homepage.Home(test_data);
-		scenariolog.info("Clicking Homeowner / Dwelling / Condo Quote button");
+		scenariolog.info("Clicking Homeowner / Dwelling / Condo Quote button fro " + test_data);
 	}
 
 }

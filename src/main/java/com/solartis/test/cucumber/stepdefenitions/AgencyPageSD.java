@@ -15,6 +15,6 @@ public class AgencyPageSD
 	{
 		AgencyPage agencypage = new AgencyPage();
 		agencypage.Agency(agency_code,test_data);
-		scenariolog.info("Agency code entered");
+		scenariolog.info("Agency code entered fro " + test_data);
 	}
 }
