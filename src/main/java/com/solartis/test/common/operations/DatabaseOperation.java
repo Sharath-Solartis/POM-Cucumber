@@ -25,12 +25,11 @@ public class DatabaseOperation
 	private static String USER=null;
 	private static String PASS =null;
 	private static String PrepareStatement =null;
-	private static LinkedHashMap<Integer, LinkedHashMap<String, String>> result_LHM = null;
+	//private LinkedHashMap<Integer, LinkedHashMap<String, String>> result_LHM = null;
 	protected String query = null;
 	protected Statement stmt = null;
 	protected ResultSet rs = null;
-	protected int rs_row = 1;
-	protected LinkedHashMap<Integer, LinkedHashMap<String, String>> table = null;
+	protected static LinkedHashMap<Integer, LinkedHashMap<String, String>> table = null;
 	protected ResultSetMetaData meta = null;
 	//private static ListIterator<String> cs_listIterator = null;
 	
@@ -110,7 +109,7 @@ public class DatabaseOperation
 		return conn;
 	}
 	
-	public static void CloseConn() throws DatabaseException
+	public void CloseConn() throws DatabaseException
 	{
 		try 
 		{
@@ -126,6 +125,8 @@ public class DatabaseOperation
 	public LinkedHashMap<Integer, LinkedHashMap<String, String>> GetDataObjects(String query) throws DatabaseException
 	{
 		this.query = query;
+		int rs_row = 1;
+		
 		LinkedHashMap<String, String> row = null;
 		try 
 		{
@@ -215,14 +216,19 @@ public class DatabaseOperation
 	
 	public void InserValueWithRowNumber(String tablename, String columnname, String value, Integer rownumber) throws DatabaseException
 	{
+		LinkedHashMap<Integer, LinkedHashMap<String, String>> result_LHM = null;
 		result_LHM = GetDataObjects("SELECT * FROM "+ tablename);
+		
+		Integer  RowNumber;
+		LinkedHashMap<String, String> RowValuesHashMap = null;
+		
 		Iterator<Entry<Integer, LinkedHashMap<String, String>>> HashMapIterator = result_LHM.entrySet().iterator();
 		while (HashMapIterator.hasNext())
 	    { 
 			Entry<Integer, LinkedHashMap<String, String>> Row_Entry = HashMapIterator.next();
 			
-			Integer  RowNumber= Row_Entry.getKey();
-			LinkedHashMap<String, String> RowValuesHashMap = Row_Entry.getValue();
+		    RowNumber= Row_Entry.getKey();
+			RowValuesHashMap = Row_Entry.getValue();
 			
 			if(RowNumber == rownumber)
 			{
@@ -230,7 +236,7 @@ public class DatabaseOperation
 			}
 			UpdateRow(rownumber,RowValuesHashMap);
 	    }
-		//UpdateTable(result_LHM);	
+		UpdateTable(result_LHM);	
 	}
 	
 	public void callStoreProcedure(String Table, List<String> Parameter) throws DatabaseException
